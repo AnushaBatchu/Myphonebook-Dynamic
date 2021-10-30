@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+body{
+ background-image:url("phonebook3.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+ }
+ table{
+ background-color:#e5cdc2;
+ margin:0px auto;
+ border:2px solid #70b3e2;
+ }
+ .right{
+ text-align: center;
+ }
+.admin_form_container {
+    width: 42%;
+    margin: 0px auto;
+    
+}
+ 
+</style>
+<script type="text/javascript">
+function adminValidation(id,pass){
+    var adminId=id;
+    var adminPw=pass;
+    if((adminId=="")&&(adminPw=="")){
+        alert("Please enter your id and password");
+    }else if(adminId==""){
+        //document.getElementById("message").innerHTML="<font color='red'>Enter id</font>";
+        alert("Enter your id");
+    }else if(adminPw==""){
+        //document.getElementById("message").innerHTML="<font color='red'>Enter your password</font>";
+        alert("Enter your password");
+    }else if(adminId=="anusha@gmail.com" && adminPw=="Anu1234@"){
+        open("adminhome.html");
+    }else if(adminPw.length<=5){
+        //document.getElementById("message").innerHTML="<font color='red'>Password length must be greater than 6 characters</font>";
+        alert("Password length must be greater than 6 characters");
+    }else{
+        //document.getElementById("message").innerHTML="<font color='red'>Incorrect username/Password</font>";
+        alert("Incorrect username/Password");
+    }
+}
+</script>
+</head>
+<body>
+<div class="right">
+<h1>MY PHONE BOOK</h1>
+<img  src="phonefront2.jfif" height="300" width="700">
+<form class="admin_form_container">
+               <table>
+                   <tr>
+                       <td>User ID:</td>
+                       <td><input type="text" name="uid" autocomplete="off"></td>
+                   </tr>
+                   <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="password"></td>
+                   </tr>
+                   <tr class="user_login">
+                       <td colspan="2"><input type="submit"  value="login"onclick="adminValidation(uid.value,password.value)"></td>
+                   </tr>
+               </table> 
+            </form>
+<div id="msg">
+</div>
+</div>
+</link>
+</body>
+</html>>

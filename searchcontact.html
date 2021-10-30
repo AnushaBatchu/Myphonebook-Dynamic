@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url("searchiconimg");
+  background-position: 5px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+.navigation {
+  width: 100%;
+  background-color: black;
+}
+.logout {
+  font-size: .8em;
+  font-family: 'Oswald', sans-serif;
+	position: relative;
+  right: -18px;
+  bottom: -4px;
+  overflow: hidden;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity .45s;
+  -webkit-transition: opacity .35s;
+  text-align:center;
+  
+}
+
+.button {
+	text-decoration: none;
+	float: right;
+  padding: 12px;
+  margin: 15px;
+  color: white;
+  width: 25px;
+  background-color: black;
+  transition: width .35s;
+  -webkit-transition: width .35s;
+  overflow: hidden;
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+a:hover {
+  width: 100px;
+}
+
+a:hover .logout{
+  opacity: .9;
+}
+
+a {
+  text-decoration: none;
+}
+.table{
+ align-content: center;
+}
+
+
+</style>
+<script type="text/javascript">
+function adminValidation(id,pass){
+    var NewContact=Name;
+    var PhoneNumber=phoneNumber;
+    if((NewContact=="")&&(PhoneNumber=="")){
+        alert("Please enter your Name and PhoneNumber");
+    }else if(NewContact==""){
+        //document.getElementById("message").innerHTML="<font color='red'>Enter Name</font>";
+        alert("Enter your Name");
+    }else if(PhoneNumber==""){
+        //document.getElementById("message").innerHTML="<font color='red'>Enter your PhoneNumber</font>";
+        alert("Enter your PhoneNumber");
+    
+    }else if(adminPw.length<=5){
+        //document.getElementById("message").innerHTML="<font color='red'>PhoneNumber length must be greater than 10 characters</font>";
+        alert("PhoneNumber length must be greater than 10 characters");
+    }else{
+        //document.getElementById("message").innerHTML="<font color='red'>Incorrect username/Password</font>";
+        alert("Incorrect Nameame/PhoneNumber");
+    }
+}
+</script>
+</head>
+<body>
+<h2>My Phonebook</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="Anusha.html">Anusha</a>
+  
+  
+  </li>
+  <li><a href="Amma.html">Amma</a></li>
+
+  <li><a href="bindhu madhuri.html">bindhu</a></li>
+  <li><a href="Brother.html">Brother</a></li>
+
+  <li><a href="Nanna.html">Nanna</a></li>
+  <li><a href="Chatu.html">chathu</a></li>
+  <li><a href="Ali.html">cat</a></li>
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+            
+        }
+    }
+    
+    
+  
+
+}
+</script>
+<a  href="create.html">Back to Addcontact</a>
+</body>
+</html>

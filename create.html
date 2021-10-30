@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+table{
+	margin-left: auto;
+	margin-right: auto;
+}
+ul{
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow:hidden;
+background-color: #333;
+}
+
+li{
+float: left;
+}
+
+li a{
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+li a:hover {
+	background-color: #111;
+}
+
+</style>
+<script type="text/javascript">
+function valid(){
+	var name= document.frm.name.value;
+	var number= document.frm.number.value;
+	var email= document.frm.email.value;
+	if(name==""){
+		alert("Enter name");
+		return false;
+		}
+	else if(number==""){
+		alert("Enter number");
+		return false;
+		}
+	else if(email==""){
+		alert("Enter email");
+		return false;
+		}
+	
+}
+
+</script>
+
+<title>Insert title here</title>
+</head>
+<body>
+<table class="center">
+<tr>
+<td>
+<ul>
+<li><a class="active" href="adminhome.html">Home</a></li>
+<li><a href="adminlogin.html">Admin Login</a></li>
+<li><a href="create.html">Add contact</a></li>
+<li><a href="searchcontact.jsp">Search contact</a></li>
+<li><a href="Delete Contact.html">Delete contact</a></li>
+<li><a href="Emargencycontacts.html">Emargency contacts</a></li>
+<li><a href="adminlogin.html">Logout</a></li>
+</ul>
+</td>
+</tr>
+</table>
+<form name="frm" action="Addcontact" onsubmit="return valid()">
+<table>
+<tr><th colspan="2">Add New contact</th></tr>
+<tr><td>Enter Name :</td><td><input type="text" name="name"></td></tr>
+<tr><td>Enter PhoneNumbre :</td><td><input type="text" name="number"></td></tr>
+<tr><td>Email :</td><td><input type="text" name="email"></td></tr>
+<tr><td>Relation:</td><td><input type="text" name="Relation"></td></tr>
+<tr><td colspan="2"><input type="submit" value="Create"></td></tr>
+</table>
+</form>
+<center>
+<img  src="addcontact.jfif" height="500" width="700">
+<img  src="bg2.jfif" height="500" width="700">
+
+
+</center>
+
+</body>
+</html>
